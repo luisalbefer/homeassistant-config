@@ -198,7 +198,7 @@ class LyricAuthenticateView(HomeAssistantView):
     def get(self, request):
         """Handle a GET request."""
         hass = request.app['hass']
-        data = request.GET
+        data = request.query
 
         if 'code' not in data or 'state' not in data:
             return self.json_message('Authentication failed, not the right '
